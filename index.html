@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+
+<head>
+<title> / - % * </title>
+<meta charset="utf-8">
+
+<link rel = "icon" href ="logo.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: arial;
+text-align: center;
+}
+
+.add{
+text-align: center;
+}
+button{
+text-align: center;
+border: 2px solid lightgreen;
+color: green;
+padding: 10px 40px;
+background: white;
+cursor: pointer;
+outline: none;
+}
+h1{
+color: lightgreen;
+background: green;
+padding: 10px;
+margin:0;
+position: fixed;
+top:0;
+left:0;
+width: 100%;
+}
+h2{
+color: green;
+background: lightgreen;
+margin-left: 30%;
+margin-right: 30%;
+padding: 10px;
+}
+button:hover{
+transition: .2s;
+box-shadow: -2px 20px 8px 0 rgb(0 0 0 / 12%), 0 6px 20px 0 rgb(0 0 0 / 25%);
+}
+
+.add .subtract, input{
+width: 50%;
+border: 1px solid #cc;
+padding: 14px;
+margin: 10px;
+font-size: 20px;
+border-radius: 30px;
+outline: none;
+border: 2px solid lightgreen;
+}
+.add .subtract, input:focus {
+box-shadow: 1px 11px 8px 0 rgb(0 0 0 / 12%), 0 6px 20px 0 rgb(0 0 0 / 25%);
+transition: .2s;
+}
+
+::placeholder{
+text-align: center;
+font-family: arial;
+font-size: 17px;
+color: green;
+letter-spacing: 1px;
+}
+img.img {
+    position: absolute;
+    top: 0;
+    right: 80%;
+}
+img.user{
+float: right;
+}
+
+.footer{
+padding: 5%;
+background: #ccc;
+}
+a.link{
+display: none;
+}
+.fa {
+    color: white;
+    background-color: #00000029;
+    border-radius: 50%;
+padding: 15px;
+margin:30px 20px;
+cursor: pointer;
+}
+button.like {
+    padding: 10px;
+    position: absolute;
+    top: 381%;
+    border-radius: 10px;
+    right: 30%;
+}
+.fa:hover{
+background: black;
+transition: .4s;
+}
+i.fa.fa-instagram {
+    color: pink;
+}
+i.fa.fa-linkedin {
+    color: #52c9ffe8;
+}
+i.fa.fa-twitter {
+    color: #00b0ff;
+}
+i.fa.fa-google {
+    color: #fb531e;
+}
+p{
+color: white;
+}
+@media only screen and (max-width: 600px){
+
+.add .subtract, input{
+width: 70%;
+}
+button.like {
+display: none;
+}
+button{
+width: 70%;
+}
+h2{
+font-size: 17px;
+}
+.fa{
+margin:20px 10px;
+}
+
+input[type="email"] {
+width: 100%;
+}
+a.link{
+display: block;
+text-decoration: none;
+color: green;
+margin-left: 20%;
+margin-right: 20%;
+text-align: center;
+border-radius: 20px;
+padding: 10px;
+border: 2px solid lightgreen;
+}
+img.img {
+display: none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1> Simple Math <img src="logo.png" class="img"></h1>
+<br><br>
+<br><br>
+
+<div class="cal">
+
+</div>
+<div class="add" id="top">
+
+<h2 class="size"> Addition page </h2><br><br>
+         <label> First Number </label><br>
+
+<input type="text" placeholder= "enter first number" name="number" id="first"><br><br>
+
+         <label> Second Number </label><br>
+
+<input type="text" placeholder= "enter second number" name="number" id="second"><br><br>
+
+<button onclick="clicked()"> Result </button> <br><br>
+
+</div><br><br>
+
+<hr class="line">
+
+<br>
+<div class="subtract">
+
+<div class="cal">
+
+</div>
+
+<h2 class="subs">Subtraction page </h2><br><br>
+
+         <label> First Number </label><br>
+
+<input type="text" placeholder= "enter first number" name="number" id="third"><br><br>
+
+          <label> Second Number </label><br>
+
+<input type="text" placeholder= "enter second number" name="number" id="fourth"><br><br>
+
+<button onclick="subtraction()"> Result </button> <br><br>
+
+
+
+</div>
+
+
+<hr class="line">
+<br>
+
+<div class="multiply">
+
+<div class="cal">
+
+</div>
+
+<h2 class="multi">Multiplying page </h2><br><br>
+
+         <label> First Number </label><br>
+
+<input type="text" placeholder= "enter first number" name="number" id="fifth"><br><br>
+
+          <label> Second Number </label><br>
+
+<input type="text" placeholder= "enter second number" name="number" id="sixth"><br><br>
+
+<button onclick="multiplication()"> Result </button> <br><br>
+
+
+
+</div>
+<hr class="line">
+<br><br>
+
+<div class="divide">
+
+<div class="cal">
+
+</div>
+
+<h2 class="divi">Division page </h2><br><br>
+
+         <label> First Number </label><br>
+
+<input type="text" placeholder= "enter first number" name="number" id="seven"><br><br>
+
+          <label> Second Number </label><br>
+
+<input type="text" placeholder= "enter second number" name="number" id="eight"><br><br>
+
+<button onclick="division()"> Result </button> <br><br>
+
+
+
+</div>
+<hr class="line">
+<br><br>
+
+
+<div class="Remain">
+
+<div class="cal">
+
+</div>
+
+<h2 class="main"> Remainder page </h2><br><br>
+
+         <label> First Number </label><br>
+
+<input type="text" placeholder= "enter first number" name="number" id="nine"><br><br>
+
+          <label> Second Number </label><br>
+
+<input type="text" placeholder= "enter second number" name="number" id="ten"><br><br>
+
+<button onclick="remainder()"> Result </button> <br><br>
+
+
+
+</div>
+<hr class="line">
+
+<br><br>
+
+<div class="footer">
+<h3> Connect in </h3>
+<i class="fa fa-instagram"></i>
+<i class="fa fa-linkedin"></i>
+<i class="fa fa-twitter"></i>
+<i class="fa fa-google"></i><br><br><br>
+<p> -A Website By Dinesh & Bastola</p><br><br>
+
+<input type="email" placeholder="email here.." name="email"><button class="like">Subscribe</button><br><br>
+<a href="#" class="link"> Subscribe </a><br>
+<p>&copy; 2021 simple math.com</p>
+
+</div>
+
+
+</body>
+
+<script>
+
+function clicked(){
+
+let a = Number(document.getElementById("first").value);
+let b = Number(document.getElementById("second").value);
+
+if((a==0)&&(b==0)){
+
+alert("Please Enter Numbers "+"(ans)"+ (0));
+}
+else{
+alert("Sum of given two numbers is" + "  "+(a+b));
+}
+
+
+}
+
+
+function subtraction(){
+
+let a = Number(document.getElementById("third").value);
+let b = Number(document.getElementById("fourth").value);
+
+if((a==0)&&(b==0)){
+
+alert("Please Enter Numbers "+"(ans)"+ (0));
+
+}
+else{
+alert("Subtraction of given two numbers is" + "  "+(a-b));
+}
+
+
+}
+
+
+function multiplication(){
+
+let a = Number(document.getElementById("fifth").value);
+let b = Number(document.getElementById("sixth").value);
+
+if((a==0)&&(b==0)){
+
+alert("Please Enter Numbers "+"(ans)"+ (0));
+
+}
+
+else{
+alert("Multiplication of given two numbers is" + "  "+(a*b));
+}
+
+
+}
+
+
+
+function division(){
+
+let a = Number(document.getElementById("seven").value);
+let b = Number(document.getElementById("eight").value);
+
+if((a==0)&&(b==0)){
+
+alert("Please Enter Numbers "+"(ans)"+ (0));
+
+}
+
+else{
+alert("Multiplication of given two numbers is" + "  "+(a/b));
+}
+
+
+}
+
+
+
+
+function remainder(){
+
+let a = Number(document.getElementById("nine").value);
+let b = Number(document.getElementById("ten").value);
+
+if((a==0)&&(b==0)){
+
+alert("Please Enter Numbers "+"(ans)"+ (0));
+
+}
+
+else{
+alert("Remainder of given two numbers is" + "  "+(a%b));
+}
+
+
+}
+
+</script>
+
+</html>
+
